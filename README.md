@@ -1,3 +1,47 @@
+# Attraction
+
+## Simple code like this
+
+```python
+with plt.style.context(["ieee", "latex", "ticks-inward"]):
+    fig, axs = initialize_figure()
+    alpha_deg, cx, cz = AeroDataLoaderInstance.get_data()
+    axs[0].plot(alpha_deg, cx)
+    axs[1].plot(alpha_deg, cz)
+    axs[1].set_xlabel(r"$\alpha~[\mathrm{deg}]$")
+    axs[0].set_ylabel(r"$\prescript{\mathcal{B}}{}{\boldsymbol{c}_x}~[\mathrm{kg/m}]$")
+    axs[1].set_ylabel(r"$\prescript{\mathcal{B}}{}{\boldsymbol{c}_z}~[\mathrm{kg/m}]$")
+    # finetuning
+    for ax in axs:
+        hilab_plot.set_minor_ticks_style(ax)
+
+    # set ticks points for first plot (cx)
+    axs[0].set_yticks([-0.04, -0.02, 0, 0.02, 0.04])
+    # Set minor ticks for y-axis (4 between each major tick)
+    major_spacing = 0.02  # Distance between major ticks
+    minor_spacing = major_spacing/5  # 4 minor ticks between majors
+    axs[0].yaxis.set_minor_locator(MultipleLocator(minor_spacing))
+
+
+    # seting x ticks lable false
+    axs[0].set_xticklabels([])
+
+            # set ticks points for second plot (cz)
+    axs[1].set_yticks([-0.3, -0.15, 0, 0.15, 0.3])
+    # Set minor ticks for y-axis (4 between each major tick)
+    major_spacing = 0.15  # Distance between major ticks
+    minor_spacing = major_spacing/5  # 4 minor ticks between majors
+    axs[1].yaxis.set_minor_locator(MultipleLocator(minor_spacing))
+
+    fig.savefig(os.path.join(figures_dir, "figure-aero-lyu.pdf"), backend="pgf")
+```
+
+可以直接出 publication-quality 图片如下
+
+![figure-aero-lyu](examples/figures/figure-aero-lyu.jpg)
+
+# Details
+
 ## ORIGINAL PACKAGE
 
 This package is originally from [scienceplots](https://github.com/garrettj403/SciencePlots).

@@ -43,7 +43,7 @@ if __name__ == "__main__":
     figure_dir = os.path.join(root_dir, "examples", "figures")
     
     # Output directory for images
-    input_image_pdf = os.path.join(figure_dir, "figure-aero-lyu-sc.pdf")
+    input_image_pdf = os.path.join(figure_dir, "figure-aero-lyu.pdf")
     
     # Convert PDF to JPG
     convert_pdf_to_images(input_image_pdf, figure_dir, fmt='jpg')
