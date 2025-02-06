@@ -1,3 +1,6 @@
+#Issues
+- [ ] There is a naming error in this project. why named as hilab_plot as a python package?, though as a file folder, it can be named as hilab_plot, but as a project, it should be named as an official name, like `sciplots`
+
 # Attraction
 
 ## Simple code like this
