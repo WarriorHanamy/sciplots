@@ -1,6 +1,8 @@
 #Issues
 - [ ] There is a naming error in this project. why named as hilab_plot as a python package?, though as a file folder, it can be named as hilab_plot, but as a project, it should be named as an official name, like `sciplots`
 
+when saved plots, fig and axes should be created in a the same plotting function routine ?[Weird].
+
 # Attraction
 
 ## Simple code like this
