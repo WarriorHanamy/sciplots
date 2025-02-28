@@ -1,7 +1,0 @@
-# simplified chinse setting
-font.family: serif
-
-text.usetex: True
-pgf.rcfonts: False
-pgf.texsystem: xelatex
-pgf.preamble: \usepackage{amsmath,amssymb,mathtools} \usepackage{fontspec} \setmainfont{Source Han Serif CN}

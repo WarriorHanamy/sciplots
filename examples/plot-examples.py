@@ -9,10 +9,12 @@ from aero_data.aero_data_loader import AeroDataLoaderInstance
 
 
 
-import hilab_plot
+import sciplots
 
 import os
 
+print(plt.style.available)
+# exit()
 # based on this file dir 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -88,7 +90,7 @@ with plt.style.context(["ieee", "latex", "ticks-inward"]):
     axs[1].set_ylabel(r"$\prescript{\mathcal{B}}{}{\boldsymbol{c}_z}~[\mathrm{kg/m}]$")
     # finetuning
     for ax in axs:
-        hilab_plot.set_minor_ticks_style(ax)
+        sciplots.set_minor_ticks_style(ax)
     
     # set ticks points for first plot (cx)
     axs[0].set_yticks([-0.04, -0.02, 0, 0.02, 0.04])
@@ -122,7 +124,7 @@ with plt.style.context(["ieee", "latex-sc", "ticks-inward"]):
     axs[1].set_ylabel(r"$\prescript{\mathcal{B}}{}{\boldsymbol{c}_z}~[\mathrm{kg/m}]$")
     # finetuning
     for ax in axs:
-        hilab_plot.set_minor_ticks_style(ax)
+        sciplots.set_minor_ticks_style(ax)
     
     # set ticks points for first plot (cx)
     axs[0].set_yticks([-0.04, -0.02, 0, 0.02, 0.04])

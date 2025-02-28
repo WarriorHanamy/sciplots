@@ -1,4 +1,5 @@
 #Issues
+
 - [ ] There is a naming error in this project. why named as hilab_plot as a python package?, though as a file folder, it can be named as hilab_plot, but as a project, it should be named as an official name, like `sciplots`
 
 when saved plots, fig and axes should be created in a the same plotting function routine ?[Weird].
@@ -138,6 +139,20 @@ Verify the installation:
 
 ```sh
 fc-list | grep "Source Han Serif"
+```
+
+_Update_ 本项目增加了一个 simsum.tcc，
+可以直接使用微软宋体(only 学术交流). 默认的 latex-sc.mplstyle 使用的是微软宋体(SimSun).
+
+```sh
+cp simsum.tcc ~/.fonts/
+fc-cache -fv
+```
+
+Verify the installation:
+
+```sh
+fc-list | grep "SimSun"
 ```
 
 ### The interaction between matplotlib and latex
