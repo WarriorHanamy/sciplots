@@ -24,10 +24,10 @@ axes.edgecolor: black
 legend.fontsize: 8
 
 # Grid settings
-grid.linestyle: --
+grid.linestyle: -
 grid.linewidth: 0.5
 grid.color: gray
-grid.alpha: 0.7
+grid.alpha: 0.5
 
 # Line settings
 
