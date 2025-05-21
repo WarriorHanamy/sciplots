@@ -1,24 +1,16 @@
-import os  # pathlib.Path.walk not available in Python <3.12
+# sciplots/__init__.py
+import os
 import matplotlib.pyplot as plt
-import sciplots
 from .styles_discovery import read_styles_in_folders
-from .com_funcs_set_style import *
-# register the bundled stylesheets in the matplotlib style library
-sciplots_path = sciplots.__path__[0]
 
-
+# 获取 sciplots 的安装路径
+sciplots_path = os.path.dirname(os.path.abspath(__file__))
 styles_path = os.path.join(sciplots_path, "styles")
 
-# Reads styles in /styles folder and all subfolders
+# 动态注册所有样式文件
 stylesheets = read_styles_in_folders(styles_path)
-
-# print("#########################")
-# print(plt.style.available)
-# print("#########################")
-
-# Update dictionary of styles - plt.style.library
 plt.style.core.update_nested_dict(plt.style.library, stylesheets)
-# Update `plt.style.available`, copy-paste from:
-# https://github.com/matplotlib/matplotlib/blob/a170539a421623bb2967a45a24bb7926e2feb542/lib/matplotlib/style/core.py#L266  # noqa: E501
 plt.style.core.available[:] = sorted(plt.style.library.keys())
 
+# 可选：暴露接口
+__all__ = ['plt']  # 允许其他模块通过 `from sciplots import plt` 使用
