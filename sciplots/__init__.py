@@ -2,7 +2,7 @@
 import os
 import matplotlib.pyplot as plt
 from .styles_discovery import read_styles_in_folders
-
+from .com_funcs_set_style import *
 # 获取 sciplots 的安装路径
 sciplots_path = os.path.dirname(os.path.abspath(__file__))
 styles_path = os.path.join(sciplots_path, "styles")
